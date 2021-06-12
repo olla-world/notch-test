@@ -1,0 +1,11 @@
+.main {
+  padding-top: 70px;
+}
+
+.section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */

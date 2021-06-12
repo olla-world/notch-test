@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import OrdersTable from './components/OrdersTable';
 import actions from './actions';
 
+import './styles/style.css'
+
 export default function Orders() {
   const {fetchOrders} = actions;
   const {orders, loading} = useSelector((state)=>state.orders);
@@ -15,12 +17,13 @@ export default function Orders() {
   },[dispatch, fetchOrders])
 
   return (
-    <div>
-      <h2>Orders</h2>
-      <OrdersTable 
-        orders={orders} 
-        loading={loading} 
-      />
+    <div className="main main--order">
+      <div className="section section--order-table">
+        <OrdersTable 
+          orders={orders} 
+          loading={loading} 
+        />
+      </div>
     </div>
   );
 }
