@@ -9,7 +9,12 @@ import NavBar from './components/NavBar';
 import routes, { routePath } from './routes';
 
 const navLinks = [
-  { text: 'Notch', href: routePath('home') }
+  { 
+    text: 'Notch', 
+    href: routePath('home'), 
+    type: 'brand',
+    img_src: 'https://storage.googleapis.com/chefhero-storage-release/interview/logo.svg'
+  }
 ];
 
 const App = props => (
