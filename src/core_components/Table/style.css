@@ -27,7 +27,24 @@
   white-space: nowrap;
 }
 
-.table__body-row__cell .status {
+.table__body-row__cell .cell-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.table__body-row__cell .cell-wrap .pill {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   padding: 8px 16px;
   background: rgba(0, 0, 0, 0.1);
   border-radius: 40px;
@@ -39,20 +56,23 @@
   font-weight: bold;
 }
 
-.table__body-row__cell .status--delivered {
+.table__body-row__cell .cell-wrap .pill--delivered {
   background: #c5c5fe;
 }
 
-.table__body-row__cell .cell-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.table__body-row__cell .cell-wrap .pill--paid {
+  background: #b1ddcb;
 }
 
-.table__body-row__cell .cell-wrapper .market {
+.table__body-row__cell .cell-wrap .pill--boarding {
+  background: #fbe668;
+  text-transform: unset;
+}
+
+.table__body-row__cell .cell-wrap .badge {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -62,6 +82,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.table__body-row__cell .cell-wrap .badge--market {
   margin: 0px 8px;
   padding: 8px;
   background: #373737;
@@ -69,20 +92,4 @@
   font-weight: bold;
   border-radius: 4px;
 }
-
-.table__body-row__cell .cell-wrapper .bording {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-item-align: center;
-      align-self: center;
-  background: #fbe668;
-  padding: 8px 16px;
-  color: black;
-  font-weight: bold;
-  border-radius: 40px;
-}
-/*# sourceMappingURL=order-table.style.css.map */
+/*# sourceMappingURL=style.css.map */

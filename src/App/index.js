@@ -13,7 +13,7 @@ const navLinks = [
     text: 'Notch', 
     href: routePath('home'), 
     type: 'brand',
-    img_src: 'https://storage.googleapis.com/chefhero-storage-release/interview/logo.svg'
+    imgSrc: 'https://storage.googleapis.com/chefhero-storage-release/interview/logo.svg'
   }
 ];
 

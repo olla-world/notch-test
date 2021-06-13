@@ -18,7 +18,7 @@ const Select = (props) => {
         {options.map(option=>
             <option 
                 key={`option-${option.value}`} 
-                className="select__option"
+                className="select-option"
                 value={option.value}
             >
                 {option.name}

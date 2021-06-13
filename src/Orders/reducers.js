@@ -1,6 +1,5 @@
 const initialState = {
   orders: [], 
-  vendors:[],
   loading: false,
   error: null
 };
@@ -17,10 +16,6 @@ const reducers = (state=initialState, action) => {
       return { 
         ...state,
         orders: action.payload,
-        vendors: [...new Set (action.payload.map(order=>({
-          'name': order.vendorName,
-          'value': order.vendorName.toLowerCase()
-        })))],
         loading: false
       }
     case "FETCH_ORDERS_FAILURE": 
