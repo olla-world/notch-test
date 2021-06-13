@@ -2,12 +2,12 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import Section from './../core_components/Section';
+
 import OrdersTable from './components/OrdersTable';
 import VendorFilter from './components/VendorFilter';
 
 import actions from './actions';
-
-import './styles/style.css'
 
 export default function Orders() {
   const {fetchOrders} = actions;
@@ -25,8 +25,11 @@ export default function Orders() {
 
   useEffect(()=>{
     function filterOrders(){
-      let _orders = selectedVendor?orders.filter(order=> order.vendorName.trim().toLowerCase() === selectedVendor): orders
-      console.log(_orders)
+      let _orders = selectedVendor?
+        orders.filter(order=> 
+          order.vendorName.trim().toLowerCase() === selectedVendor
+        )
+        : orders
       setFilteredOrders(_orders)
     }
 
@@ -36,24 +39,24 @@ export default function Orders() {
 
   return (
     <div className="main main--order">
-      <div className="section section--filters">
-        <div className="wrap wrap--filters">
+      {vendors && vendors.length>0?
+        <Section classNameMod='filters'>
           <VendorFilter 
-            vendors={vendors} 
-            selectedVendor={selectedVendor}
-            updateSelectedVendor={updateSelectedVendor}
-            resetSelectedVendor={resetSelectedVendor}
-          />
-        </div>
-      </div>
-      <div className="section section--order-table">
-        <div className="wrap wrap--order-table">
-          <OrdersTable 
-            orders={filteredOrders} 
-            loading={loading} 
-          />
-        </div>
-      </div>
+              vendors={vendors} 
+              selectedVendor={selectedVendor}
+              updateSelectedVendor={updateSelectedVendor}
+              resetSelectedVendor={resetSelectedVendor}
+            />
+        </Section>
+        :<></>
+      }
+
+      <Section classNameMod='order-table'>
+        <OrdersTable 
+          orders={filteredOrders} 
+          loading={loading} 
+        />
+      </Section>
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Loading from '../../core_components/Loading';
+
 import Order from './Order';
 
 import './../styles/order-table.style.css';
@@ -34,7 +36,7 @@ const OrdersTableHeader = () =>
 
 const OrdersTable = ({ orders, loading }) => 
   loading === true ? 
-    <p>Loading orders ...</p>
+    <Loading/>
     :<table className="table table--order">
       <thead>
         {OrdersTableHeader()}

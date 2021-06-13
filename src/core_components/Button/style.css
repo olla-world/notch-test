@@ -1,0 +1,31 @@
+.button {
+  cursor: pointer;
+}
+
+.button--reset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: black;
+  color: white;
+  margin-top: 8px;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.button--reset__icon {
+  margin-right: 16px;
+}
+
+.button--reset__name {
+  white-space: nowrap;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,54 +1,49 @@
 import React from 'react';
 
+import Button from './../../core_components/Button';
+import Select from '../../core_components/Select';
+
 import './../styles/vendor-filter.style.css';
 
 const VendorFilter = ({ 
-    vendors, 
-    selectedVendor,
-    updateSelectedVendor,
-    resetSelectedVendor 
-}) =>{
-    const vendors_with_all = [{
-            'name':'All Suppliers',
-            'value': ''
-        }
-        , ...vendors
-    ];
-
-    return (
-        <>
+        vendors, 
+        selectedVendor,
+        updateSelectedVendor,
+        resetSelectedVendor 
+    }) => <>
             <div className="tag">
                 Supplier
             </div>
 
             <div className="filter">
-                <select 
-                    value={selectedVendor}
-                    onChange={e=>updateSelectedVendor(e)} 
-                    className="select select--vendor"
-                >
-                    {vendors_with_all.map(vendor=>
-                        <option 
-                            key={`option-${vendor.value}`} 
-                            className="select__option"
-                            value={vendor.value}
-                        >
-                            {vendor.name}
-                        </option>
-                    )}
-                </select>
+                <Select 
+                    classNameMod='vendor'
+                    selected={selectedVendor}
+                    handleChange={updateSelectedVendor}
+                    options={
+                        [
+                            {
+                                'name':'All Suppliers',
+                                'value': ''
+                            }
+                            , ...vendors
+                        ]
+                    }
+                />
 
-                <div className="button button--reset" onClick={()=>resetSelectedVendor()}>
-                    <div className="button__icon">
+                <Button 
+                    classNameMod="reset" 
+                    handleClick={resetSelectedVendor}
+                >
+                    <div className="button--reset__icon">
                         X
                     </div>
-                    <div className="button__name">
+                    <div className="button--reset__name">
                         Reset Filters
                     </div>
-                </div>
+                </Button>
             </div>
         </>
-    )
-} 
+    
 
 export default VendorFilter;

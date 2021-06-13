@@ -8,46 +8,4 @@
 .filter{
     display: flex;
     flex-wrap: wrap;
-    .select{
-        min-width: 250px;
-        // width: 450px;
-
-        margin-right: 16px;
-        margin-top: 8px;
-        padding: 8px;
-
-        font-size: 14px;
-
-        option{
-            padding: 8px;
-            font-size: 16px;  
-        }
-    }
-    .button{
-        &--reset{
-            display: flex;
-            flex-wrap: nowrap;
-
-            justify-content: center;
-            align-items: center;
-            background: black;
-
-            cursor: pointer;
-
-            color: white;
-
-            margin-top: 8px;
-            padding: 8px 16px;
-
-            border-radius: 4px;
-        }
-
-        &__icon{
-            margin-right: 16px;
-        }
-
-        &__name{
-            white-space: nowrap;
-        }
-    }
 }
