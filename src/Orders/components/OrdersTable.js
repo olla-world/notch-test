@@ -35,17 +35,15 @@ const OrdersTableHeader = () =>
   </tr>
 
 const OrdersTable = ({ orders, loading }) => 
-  loading === true ? 
-    <Loading/>
-    :<table className="table table--order">
-      <thead>
-        {OrdersTableHeader()}
-      </thead>
-      
-      <tbody>{
-        orders.map(order =>
-          <Order key={order.id} order={order} />
-      )}</tbody>   
+  <table className="table table--order">
+    <thead>
+      {OrdersTableHeader()}
+    </thead>
+    
+    <tbody>{
+      orders.map(order =>
+        <Order key={order.id} order={order} />
+    )}</tbody>   
   </table>
 
 export default OrdersTable;

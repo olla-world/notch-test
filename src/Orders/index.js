@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Section from './../core_components/Section';
+import Loading from '../core_components/Loading';
 
 import OrdersTable from './components/OrdersTable';
 import VendorFilter from './components/VendorFilter';
@@ -38,8 +39,9 @@ export default function Orders() {
  
 
   return (
-    <div className="main main--order">
-      {vendors && vendors.length>0?
+    <div className="main main--order">{loading === true ? 
+      <Loading/>
+      :<>{vendors && vendors.length>0?
         <Section classNameMod='filters'>
           <VendorFilter 
               vendors={vendors} 
@@ -48,15 +50,14 @@ export default function Orders() {
               resetSelectedVendor={resetSelectedVendor}
             />
         </Section>
+        :<></>}{filteredOrders && filteredOrders.length>0 ? 
+        <Section classNameMod='order-table'>
+          <OrdersTable 
+            orders={filteredOrders} 
+          />
+        </Section>
         :<></>
-      }
-
-      <Section classNameMod='order-table'>
-        <OrdersTable 
-          orders={filteredOrders} 
-          loading={loading} 
-        />
-      </Section>
-    </div>
+      }</>
+    }</div>
   );
 }
