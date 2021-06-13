@@ -25,7 +25,7 @@ const Order = ({ order }) =>
                     :''
                 }
                 
-                {!order.isPendingVendorOnboarding? 
+                {order.isPendingVendorOnboarding? 
                     <div className="bording">
                         1st
                     </div>

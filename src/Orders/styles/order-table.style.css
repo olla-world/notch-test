@@ -1,7 +1,6 @@
 .table {
   border-collapse: collapse;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
 }
 
 .table__header-row {
@@ -10,7 +9,6 @@
 }
 
 .table__header-row__cell {
-  min-width: 250px;
   padding: 24px 8px;
   font-size: 14px;
   text-align: left;
@@ -23,7 +21,6 @@
 }
 
 .table__body-row__cell {
-  min-width: 250px;
   padding: 16px 8px;
   font-size: 14px;
   text-align: left;

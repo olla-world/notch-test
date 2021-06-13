@@ -1,12 +1,11 @@
 .table{
     border-collapse: collapse; 
-    margin-left:auto; 
-    margin-right:auto;
+    width: 100%;
 
     &__header-row{
         box-shadow: 0px 3px 5px 2px #00000036;
         &__cell{
-            min-width: 250px;
+            // min-width: 250px;
             padding: 24px 8px; 
 
             font-size: 14px;
@@ -19,7 +18,7 @@
     &__body-row{
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         &__cell{
-            min-width: 250px;
+            // min-width: 250px;s
 
             padding: 16px 8px; 
 
